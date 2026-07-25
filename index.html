@@ -67,9 +67,9 @@
                     },
                     "spacing": {
                         "container-max": "1100px",
-                        "section-padding-mobile": "64px",
+                        "section-padding-mobile": "40px",
                         "unit": "8px",
-                        "section-padding": "120px",
+                        "section-padding": "80px",
                         "gutter": "24px"
                     },
                     "fontFamily": {
@@ -82,7 +82,7 @@
                     },
                     "fontSize": {
                         "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
-                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "400"}],
                         "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
                         "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
                         "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
@@ -102,9 +102,10 @@
         .reveal-up.visible span { transform: translateY(0); }
         
         #envelope-overlay { perspective: 1500px; }
+
         .envelope-flap { transform-origin: top; transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
-        .envelope-open .envelope-flap { transform: rotateX(180deg); z-index: 0; }
-        .envelope-open .envelope-body { transform: translateY(100%); opacity: 0; transition: transform 1s 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s 0.7s ease-out; }
+		.envelope-open .envelope-flap {    transform: rotateX(180deg);    opacity: 0;    transition:        transform 0.8s ease,        opacity 0.5s 0.7s ease;}
+		.envelope-open .envelope-body {    opacity: 0;    transition: opacity 1s 0.4s ease;}
         .main-content-reveal { opacity: 0; transform: scale(0.95); transition: opacity 1.2s 0.8s ease-out, transform 1.2s 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .main-content-reveal.visible { opacity: 1; transform: scale(1); }
 
@@ -135,8 +136,9 @@
 <!-- Wedding Envelope Intro -->
 <div class="fixed inset-0 z-[100] flex items-center justify-center bg-surface-container-low transition-all duration-1000 " id="envelope-overlay" style="opacity: 1; pointer-events: auto;">
 <div class="relative w-[90%] max-w-[600px] h-[400px] envelope-container">
-<div class="envelope-flap absolute top-0 left-0 w-full h-1/2 bg-surface-container-low border-fine border-outline-variant/30 z-30 shadow-md" style="clip-path: polygon(0 0, 100% 0, 50% 100%);background-color: #E1CEAD;"></div>
-<div class="envelope-body absolute inset-0 border-fine border-outline-variant/30 z-10 shadow-xl flex flex-col items-center justify-center bg-surface-container-low" style="background-color: #EFE4D2;"></div>
+<div class="envelope-tapado absolute top-0 left-0 w-full h-1/2 bg-surface-container-low border-fine border-outline-variant/30 z-20 shadow-md" style="clip-path: polygon(0 0, 100% 0, 50% 100%);background-color: #FFFFFF;"></div>
+<div class="envelope-flap absolute top-0 left-0 w-full h-1/2 bg-surface-container-low border-fine border-outline-variant/30 z-30 shadow-md" style="clip-path: polygon(0 0, 100% 0, 50% 100%);background-color: #A8BBA2;"></div>
+<div class="envelope-body absolute inset-0 border-fine border-outline-variant/30 z-10 shadow-xl flex flex-col items-center justify-center bg-surface-container-low" style="background-color: #A8BBA2;"></div>
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[-2px] wax-seal-wrapper group" id="sello" onclick="openInvitation()"><img alt="Sello de Lacre J&amp;L" class="w-24 h-24 rounded-full transition-transform duration-500 group-hover:scale-110" id="wax-seal-img" src="images/sello.png"></div>
 
 <div class="absolute inset-0 bg-surface-container-lowest z-0"></div>
@@ -164,12 +166,12 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-24">
 <div class="fade-in">
 <div class="border-fine border-outline-variant p-2 bg-white rotate-[-2deg] transition-transform hover:rotate-0 duration-700 shadow-sm">
-<img alt="José y Lidia" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYsBIMU3JDB0jnKHd5u_tPZ7sLnd_NYq8iW06c5l5zoLFQEtP3LYjeS837Dsffhr_ytvgz0aZPvGQoNhXcmVAQDgGGFtl8t7H3hAD70p-XszXCDxg0eKLkwffWcdAx5bZ9YPjTo6sj4iS2s7WmipMvEtg2NnDseSjCjv7OGZlXJkNg-pbis53FU9qbtVsFyaPIApG2-PYEyYZD-PgysH0Syv23LBQU5KHBx0xxygZinTr1tzoMYIOKsSsH0gQs_tDZnxnUSHLvA_M">
+<img alt="José y Lidia" class="w-full aspect-[4/5] object-cover" src="images/historia/historia-01.jpg">
 </div>
 </div>
 <div class="fade-in">
 <div class="md:mt-24 border-fine border-outline-variant p-2 bg-white rotate-[3deg] transition-transform hover:rotate-0 duration-700 shadow-sm">
-<img alt="Momentos Especiales" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqUFbMPUrt3fOY5BE_PnKc9cBYYXbenIDehWEaq0SPSemfZT_-2hBk2LB5FIstBoeHenQg6f3m7_Ku93Brcc5LaJqNC_lfN7eCJYR-iN9HxQHoNZQhxnOAEXISKTGaeaVwGQyHgQmyN-vrKYpqaILYbv9MEL7ygJ2xoX4STHAWeqVg0xo3Pr0Q0k51wL-7bKpWfoUZmipHQOL1MF8qEWe1LFbnIRLRmUOmLo18fYTF793f5h1kPpcyOS1u_-96Bi-NKyhIx4MiHI">
+<img alt="Momentos Especiales" class="w-full aspect-[4/5] object-cover" src="images/historia/historia-02.jpg">
 </div>
 </div>
 </div>
@@ -179,20 +181,20 @@
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
 <div class="space-y-4">
-<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvgomIOM1hCc_PWBBY-ZP8KWr_sVi0u18lvh2vpaLn0m6I3ZrxD3GLCFe6aTFD_rcbFqogqxxdozAPFB_pA6xeB_QLjRAkAb01Sng1XftbacYi72zbk0DQ7MSqPyK-fX14uyFxkSdHOIWfQ8TBvh0n23O5w-3cwUBLXnZFtsvvJLJ97gPzYpmx3gVndN5HUA7hUBp-RWlJ5BBljmFo21MlasjrWR7y9W99MbVTILmXpN6YdiawjTfpIlpgZWxtC2sAZaRV84sI68I">
-<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCv3_-RZYszZcSL_9CNbHEOg7QG6UZwrBmYcikhM7IXAYAun8u04hoZnC6T9pIloloXvq4tz7qg7YCY5kqtQOkKnaRO7eATJNSZnnqa3JmwOHuPP8Wwps02Rm0fnncB1s9I1SiUPPlk0TkYxW2575SarIXzaASZDE2vUXIYrOLpKeVI9iGKH2hb6jN2fGt8OLOAZO0ecPLtJFTvajm05ANSyECW3KCPRltujwtIgqHQ8kDlV327IqoneR93X8rjF0fFW6AkfYf95g">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="images/galeria/galeria-10.jpg">
+<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="images/galeria/galeria-05.jpg">
 </div>
 <div class="space-y-4 md:mt-8">
-<img alt="Recuerdo" class="w-full aspect-[2/3] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45QeoIR7Ofw2MPtlTSqwNg9J45wB6FkUjnF2v5ZpzAJOWhJnllE-LIlqrL8fyKWci4HbyzLZTsxCCaJX7QwrI8kN6lGsaouhVFxH01QIDNFzk_UZpaPVqqqoS62dpaKlLMPXpKsDwCWl5-DVWZXOByllqp589d8lZJXxdGdf0vwlTI2b60kYNHuaFYm6OJVuX2m_mBU3nIKEpeUvg5UIwAGZxy_0SkB1UnbBPYRb6b6h7b_9JlXS3IYr1LxQX6HY7aQVHOro3YEU">
-<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvrhnIMUC3tq3US_MjfuneQnoTpLVDk1xxwiD5b9BsSUJtYAoYT89t42h9YgZCe6zVTN1ip0F5jFqHJM_kQnM7h9bZIMBuc1K9ciye5A1zUVaT1ooI4z4E5_oQMkVC9znZghlYv-SawigZt4KqPyNx5Fzx-EkLoKlftDziMZh4vtuaGVI7AwQawvEXBejDm4rAStrPU7ImgiWjr3LAeS85Fi3z_b7j7XgyzyXbIW5PEvYspJFmh-FGrmygQg9aB0k6bJ5tOYn61Ns">
+<img alt="Recuerdo" class="w-full aspect-[2/3] object-cover" src="images/galeria/galeria-02.jpg">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="images/galeria/galeria-06.jpg">
 </div>
 <div class="space-y-4">
-<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOvdQNS1OrAySUIYvWGl8omKcn9lwTM4uAVaiJ_WgTuxBdM3piZTDRFJgzcM6hRWpoMaE_U9-BYdKQwT9Rioy9e3P2BjlELE1kLnGXz_AC5dggtuSDYoGVmS5yT6nDeepyw_X0Ptc5LGQn9IlduLZ54FphUeabuK3_NkNQr2IYpa-cAalHCP57NhGPKKHNIPD_0MhSs8XE7FGZIxYNpTyxylLMpUUzAxpvie8-g6PZ7ZUgEZHAp96aIiqDxgsdeJuzBzTDpxfZ6Hw">
-<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgKonRCHBt0jc0MNsRpraQDjdtnuVa5lN9oQ85C9B-dWSCancrICL3s9uphprLRnzHx5BnGw3tDGHHeBC4xpwj2OCghVdoVcPyeD6d-aOQpq1AqmB4BmUQp1_XZ07_93COpfoavsnt8u5p4imfN9Fjlsg4-Hwln9de6YEqASiuGRIlt02kKEM94iro4EoLkwcxh7BZZL13RKsJ5yFQca5DcdqVEM6Mebrj1SYeYeolkPFeJ10fVv3-02iXDyZ9VbVdGPVByIwcs9k" style="object-position: right;">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="images/galeria/galeria-03.jpg">
+<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="images/galeria/galeria-07.jpg" style="object-position: right;">
 </div>
 <div class="space-y-4 md:mt-8">
-<img alt="Recuerdo" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHTlk1xqeeopur2k34pXqAA2dt29i0g1mpEQz4qi2oWfL3Cgwwjcow92q82SBSanXxFdXVCUO1LjJ4XOOTIxUFHYNTTqDR9aNUiMl5_Y7Q1_06qHfdNs6YuzyGyCqYSi3X685PKslIM6RWm0ivMa87PsAOFzBVWmcBS9RjFyRuKSFrvOOUH2LCA8ZIaEGn05Rjfg78wx0uBnp8KOruKHGbg7www8sMC1NJL0dNhFgKcH_AQxWWGoT7K97vX8_uO2Ehpcc2MeBlLkM" style="object-position: 20% center;">
-<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3bas5MNEPPu-qXkVY0dYxVY8aGLYSqelHTzJ0L3YJH74rVrHl052u_wxv0gszwF5J2BjeYckc8ljjrzeqkmrySrhGRp6GgfSoMt9yQj79IIuuwVWIPyKYaY8jR7ScK_a1ZXlHRJOfzPX0FHxYXfoLxOwyLsMOOXwR1fUUYOqgV_kCB0L6eWePSR_hS5xX18xmJwPQjsNDISzEI4mX6ALrtgoQFiwE1md7SDZn_1O8mI6onddgcN7vBBllMxyMDvfgaviKT6Xi8fg">
+<img alt="Recuerdo" class="w-full aspect-[4/5] object-cover" src="images/galeria/galeria-04.jpg" style="object-position: 35% center;">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="images/galeria/galeria-08.jpg">
 </div>
 </div>
 </section>
@@ -267,7 +269,7 @@
 <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
 </svg>
 </div>
-<p class="font-body-md text-on-surface-variant mb-10 flex-grow">No hay mejor Dress Code que venir con ganas de celebrar. Elegid un look con el que os sintáis cómodos y podáis disfrutar de cada momento. Vuestra compañía será siempre el mejor complemento.</p>
+<p class="font-body-md text-on-surface-variant mb-10 flex-grow">No hay mejor Dress Code que venir con ganas de celebrar. Vuestra compañía será siempre el mejor complemento.</p>
 </div>
 <!-- Consejos Card -->
 <div class="bg-surface-container-high rounded-xl p-10 flex flex-col items-center text-center shadow-sm border-fine border-outline-variant/30 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] hover-float">
@@ -288,8 +290,8 @@
 <section class="py-section-padding px-gutter max-w-container-max mx-auto overflow-hidden bg-surface">
 <div class="fade-in max-w-[900px] mx-auto visible">
 <div class="relative group overflow-hidden border-fine border-outline-variant p-4 bg-white shadow-xl">
-<img alt="Nos vemos pronto" class="w-full grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPhSZY7yhzkIR5IjDjCFl7N1BFO5-ydjh487Kqdvnx_7QCfAGvzCH-Lt0cn5wM9k1K_iezxmjuCmWcPNSB61asT52iO9FOOBg5RlTOaep9sraSpuwrtnsFXr_DsgMR3eBL7TZ6lyZE4vujxf04Q_dHA2G2JWONeuGiOgfa3zk7DvIb6DMd0w-QmvS-qsH1tmbSqfiEH9nZ3Gtd3IEWlqMW8IpbgBWdFuI9mZpIqt1nt_A0I6c3hj48lUl--L0ajexh8m8CchAM9Vk">
-<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+<img alt="Nos vemos pronto" class="w-full grayscale hover:grayscale-0 transition-all duration-1000" src="images/historia/historia-03.jpg" >
+<div class="absolute inset-0 flex items-center justify-center opacity-100  bg-black/20">
 <span class="font-display-lg text-white text-display-lg-mobile italic">Contando los días</span>
 </div>
 </div>
@@ -321,7 +323,7 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#event">Ubicación</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#rsvp">RSVP</a>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 07-11-2026 José y Lidia. Hecho con mucho cariño.</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 07-11-2026 José y Lidia. Hecho con cariño.</p>
 </div>
 </footer>
 </div>
@@ -387,6 +389,8 @@
                 }, 100);
             }
         });
+
+    
     </script>
 
 
