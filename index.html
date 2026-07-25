@@ -1,0 +1,389 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>José y Lidia | Invitación de Boda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fbf9f8",
+                        "primary": "#56642b",
+                        "background": "#fbf9f8",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed-variant": "#603f2d",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#2c2c2a",
+                        "on-surface": "#1b1c1c",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbd9d9",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "surface-container-high": "#eae8e7",
+                        "error": "#ba1a1a",
+                        "primary-container": "#8a9a5b",
+                        "on-secondary-fixed": "#2e1506",
+                        "inverse-primary": "#bdce89",
+                        "tertiary": "#5e5e5c",
+                        "outline": "#76786b",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed-dim": "#bdce89",
+                        "tertiary-fixed": "#e4e2de",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ecbda4",
+                        "on-primary-container": "#253000",
+                        "secondary-fixed": "#ffdbca",
+                        "outline-variant": "#c6c8b8",
+                        "on-tertiary-fixed": "#1b1c1a",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#7a5642",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3e4c16",
+                        "inverse-surface": "#303030",
+                        "on-secondary-container": "#795541",
+                        "surface-tint": "#56642b",
+                        "primary-fixed": "#d9eaa3",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-container": "#fecdb4",
+                        "tertiary-container": "#949390",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface-variant": "#46483c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1100px",
+                        "section-padding-mobile": "64px",
+                        "unit": "8px",
+                        "section-padding": "120px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["DM Sans"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .border-fine { border-width: 0.5px; }
+        .reveal-up { overflow: hidden; }
+        .reveal-up span { display: block; transform: translateY(100%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-up.visible span { transform: translateY(0); }
+        
+        #envelope-overlay { perspective: 1500px; }
+        .envelope-flap { transform-origin: top; transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .envelope-open .envelope-flap { transform: rotateX(180deg); z-index: 0; }
+        .envelope-open .envelope-body { transform: translateY(100%); opacity: 0; transition: transform 1s 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s 0.7s ease-out; }
+        .main-content-reveal { opacity: 0; transform: scale(0.95); transition: opacity 1.2s 0.8s ease-out, transform 1.2s 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .main-content-reveal.visible { opacity: 1; transform: scale(1); }
+
+        .wax-seal-wrapper { filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); cursor: pointer; z-index: 50; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .hover-float:hover .animate-svg { animation: float 2s ease-in-out infinite; }
+        
+        .draw-icon path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2s ease-out forwards;
+        }
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+        
+        nav { transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<audio id="wedding-music" loop="">
+<source src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9d/f5/8a/9df58a4c-5353-855c-1510-184e1b73e351/mzaf_16503837946114674722.plus.aac.p.m4a" type="audio/mp4">
+</audio>
+<!-- Wedding Envelope Intro -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-surface-container-low transition-all duration-1000 " id="envelope-overlay" style="opacity: 1; pointer-events: auto;">
+<div class="relative w-[90%] max-w-[600px] h-[400px] envelope-container">
+<div class="envelope-flap absolute top-0 left-0 w-full h-1/2 bg-surface-container-low border-fine border-outline-variant/30 z-30 shadow-md" style="clip-path: polygon(0 0, 100% 0, 50% 100%);"></div>
+<div class="envelope-body absolute inset-0 border-fine border-outline-variant/30 z-10 shadow-xl flex flex-col items-center justify-center bg-surface-container-low">
+<div class="text-center">
+<span class="font-display-lg text-headline-md text-on-surface-variant/40 mb-2 block italic">Para ti</span>
+<h2 class="font-display-lg text-headline-md text-primary opacity-80">José y Lidia</h2>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[-2px] wax-seal-wrapper group" onclick="openInvitation()"><img alt="Sello de Lacre J&amp;L" class="w-24 h-24 rounded-full transition-transform duration-500 group-hover:scale-110" id="wax-seal-img" src="https://lh3.googleusercontent.com/aida/AP1WRLt_etb6ZyzLiOLpPNPOSLv38Aeo-qnhfqCK9I7d4poAS3lRNmx3kfDEXqoZidFzhBy5T-fW5DaDe3yEb1lqkRwZjPjXUarlubsIssU5MGID50h19_XvmsQHeMErdLZ0eI6k5dL0gQM9_S4rb1RdIZTGiheES1ooMdhiY6rD79FwAWSG9Cs97aI-fVjG_hea2G9ewoCEd9PABaeDuDQMP8ZmrSRTjHXsoEh3DbTb9MyfxE8UfdgBfl-miQY"></div>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest z-0"></div>
+</div>
+</div>
+<div class="main-content-reveal" id="main-content">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b-[0.5px] border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-gutter py-6 max-w-container-max mx-auto">
+<span class="font-display-lg text-headline-md text-primary">José y Lidia</span>
+<div class="hidden md:flex items-center gap-10">
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[100vh] flex overflow-hidden w-full aspect-[4/5]">
+<div class="absolute inset-0 z-0 scale-105 w-full h-full" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDjCk4CeN0g8NK9snnkwh4jSTxiIBGRJz3sovnj3Am-vfTnVHakrMwzF48M_s4bnxD7PYgQNekho24L-JBKT1mS14tXw_Z1UYXymEjRegNUwtrWhLfhbQnNYPjuwYukLrLanjX3CWIBmdOBWek3RbYoeXkcq3lj_DXHgRDRtK6z60meLS0QB_HUukcwnQat8TZGOyQEE0bNwgJwSucHgyDzNYh767yTlc85W3canfGYrGTVGdmBVGj0Ld2L6tWlqlFt7if95AllHoc&quot;); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent w-full h-full" style="transition: transform 20s ease-out; transform: scale(1.15);"></div>
+<div class="relative z-20 w-full h-full flex flex-col justify-end pb-24 px-gutter text-white max-w-[700px]">
+<div class="reveal-up mb-4"><span class="font-label-caps text-label-caps tracking-[0.3em] uppercase opacity-90">7 de Noviembre, 2026</span></div>
+<h1 class="font-display-lg text-display-lg md:text-[80px] mb-8 leading-none">José y Lidia</h1>
+<div class="reveal-up max-w-[500px]"><span class="font-body-lg italic opacity-80 leading-relaxed">"Lo que hace inolvidable un día no es el lugar ni los detalles, sino las personas que lo comparten."</span></div>
+</div>
+</header>
+<!-- Story Gallery Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto overflow-hidden bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-24">
+<div class="fade-in">
+<div class="border-fine border-outline-variant p-2 bg-white rotate-[-2deg] transition-transform hover:rotate-0 duration-700 shadow-sm">
+<img alt="José y Lidia" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYsBIMU3JDB0jnKHd5u_tPZ7sLnd_NYq8iW06c5l5zoLFQEtP3LYjeS837Dsffhr_ytvgz0aZPvGQoNhXcmVAQDgGGFtl8t7H3hAD70p-XszXCDxg0eKLkwffWcdAx5bZ9YPjTo6sj4iS2s7WmipMvEtg2NnDseSjCjv7OGZlXJkNg-pbis53FU9qbtVsFyaPIApG2-PYEyYZD-PgysH0Syv23LBQU5KHBx0xxygZinTr1tzoMYIOKsSsH0gQs_tDZnxnUSHLvA_M">
+</div>
+</div>
+<div class="fade-in">
+<div class="md:mt-24 border-fine border-outline-variant p-2 bg-white rotate-[3deg] transition-transform hover:rotate-0 duration-700 shadow-sm">
+<img alt="Momentos Especiales" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqUFbMPUrt3fOY5BE_PnKc9cBYYXbenIDehWEaq0SPSemfZT_-2hBk2LB5FIstBoeHenQg6f3m7_Ku93Brcc5LaJqNC_lfN7eCJYR-iN9HxQHoNZQhxnOAEXISKTGaeaVwGQyHgQmyN-vrKYpqaILYbv9MEL7ygJ2xoX4STHAWeqVg0xo3Pr0Q0k51wL-7bKpWfoUZmipHQOL1MF8qEWe1LFbnIRLRmUOmLo18fYTF793f5h1kPpcyOS1u_-96Bi-NKyhIx4MiHI">
+</div>
+</div>
+</div>
+<div class="text-center mb-20 fade-in">
+<h2 class="font-headline-md italic text-primary mb-4">Nuestra Historia</h2>
+<p class="font-body-lg text-body-lg max-w-[600px] mx-auto text-on-surface-variant">Cada paso que hemos dado nos ha traído hasta aquí, y no podríamos estar más felices de celebrarlo con vosotros.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
+<div class="space-y-4">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvgomIOM1hCc_PWBBY-ZP8KWr_sVi0u18lvh2vpaLn0m6I3ZrxD3GLCFe6aTFD_rcbFqogqxxdozAPFB_pA6xeB_QLjRAkAb01Sng1XftbacYi72zbk0DQ7MSqPyK-fX14uyFxkSdHOIWfQ8TBvh0n23O5w-3cwUBLXnZFtsvvJLJ97gPzYpmx3gVndN5HUA7hUBp-RWlJ5BBljmFo21MlasjrWR7y9W99MbVTILmXpN6YdiawjTfpIlpgZWxtC2sAZaRV84sI68I">
+<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCv3_-RZYszZcSL_9CNbHEOg7QG6UZwrBmYcikhM7IXAYAun8u04hoZnC6T9pIloloXvq4tz7qg7YCY5kqtQOkKnaRO7eATJNSZnnqa3JmwOHuPP8Wwps02Rm0fnncB1s9I1SiUPPlk0TkYxW2575SarIXzaASZDE2vUXIYrOLpKeVI9iGKH2hb6jN2fGt8OLOAZO0ecPLtJFTvajm05ANSyECW3KCPRltujwtIgqHQ8kDlV327IqoneR93X8rjF0fFW6AkfYf95g">
+</div>
+<div class="space-y-4 md:mt-8">
+<img alt="Recuerdo" class="w-full aspect-[2/3] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45QeoIR7Ofw2MPtlTSqwNg9J45wB6FkUjnF2v5ZpzAJOWhJnllE-LIlqrL8fyKWci4HbyzLZTsxCCaJX7QwrI8kN6lGsaouhVFxH01QIDNFzk_UZpaPVqqqoS62dpaKlLMPXpKsDwCWl5-DVWZXOByllqp589d8lZJXxdGdf0vwlTI2b60kYNHuaFYm6OJVuX2m_mBU3nIKEpeUvg5UIwAGZxy_0SkB1UnbBPYRb6b6h7b_9JlXS3IYr1LxQX6HY7aQVHOro3YEU">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvrhnIMUC3tq3US_MjfuneQnoTpLVDk1xxwiD5b9BsSUJtYAoYT89t42h9YgZCe6zVTN1ip0F5jFqHJM_kQnM7h9bZIMBuc1K9ciye5A1zUVaT1ooI4z4E5_oQMkVC9znZghlYv-SawigZt4KqPyNx5Fzx-EkLoKlftDziMZh4vtuaGVI7AwQawvEXBejDm4rAStrPU7ImgiWjr3LAeS85Fi3z_b7j7XgyzyXbIW5PEvYspJFmh-FGrmygQg9aB0k6bJ5tOYn61Ns">
+</div>
+<div class="space-y-4">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOvdQNS1OrAySUIYvWGl8omKcn9lwTM4uAVaiJ_WgTuxBdM3piZTDRFJgzcM6hRWpoMaE_U9-BYdKQwT9Rioy9e3P2BjlELE1kLnGXz_AC5dggtuSDYoGVmS5yT6nDeepyw_X0Ptc5LGQn9IlduLZ54FphUeabuK3_NkNQr2IYpa-cAalHCP57NhGPKKHNIPD_0MhSs8XE7FGZIxYNpTyxylLMpUUzAxpvie8-g6PZ7ZUgEZHAp96aIiqDxgsdeJuzBzTDpxfZ6Hw">
+<img alt="Recuerdo" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgKonRCHBt0jc0MNsRpraQDjdtnuVa5lN9oQ85C9B-dWSCancrICL3s9uphprLRnzHx5BnGw3tDGHHeBC4xpwj2OCghVdoVcPyeD6d-aOQpq1AqmB4BmUQp1_XZ07_93COpfoavsnt8u5p4imfN9Fjlsg4-Hwln9de6YEqASiuGRIlt02kKEM94iro4EoLkwcxh7BZZL13RKsJ5yFQca5DcdqVEM6Mebrj1SYeYeolkPFeJ10fVv3-02iXDyZ9VbVdGPVByIwcs9k" style="object-position: 20% center;">
+</div>
+<div class="space-y-4 md:mt-8">
+<img alt="Recuerdo" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHTlk1xqeeopur2k34pXqAA2dt29i0g1mpEQz4qi2oWfL3Cgwwjcow92q82SBSanXxFdXVCUO1LjJ4XOOTIxUFHYNTTqDR9aNUiMl5_Y7Q1_06qHfdNs6YuzyGyCqYSi3X685PKslIM6RWm0ivMa87PsAOFzBVWmcBS9RjFyRuKSFrvOOUH2LCA8ZIaEGn05Rjfg78wx0uBnp8KOruKHGbg7www8sMC1NJL0dNhFgKcH_AQxWWGoT7K97vX8_uO2Ehpcc2MeBlLkM">
+<img alt="Recuerdo" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3bas5MNEPPu-qXkVY0dYxVY8aGLYSqelHTzJ0L3YJH74rVrHl052u_wxv0gszwF5J2BjeYckc8ljjrzeqkmrySrhGRp6GgfSoMt9yQj79IIuuwVWIPyKYaY8jR7ScK_a1ZXlHRJOfzPX0FHxYXfoLxOwyLsMOOXwR1fUUYOqgV_kCB0L6eWePSR_hS5xX18xmJwPQjsNDISzEI4mX6ALrtgoQFiwE1md7SDZn_1O8mI6onddgcN7vBBllMxyMDvfgaviKT6Xi8fg">
+</div>
+</div>
+</section>
+<!-- Parallax Quote -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-black/20 z-10"></div>
+<div class="absolute inset-0 bg-fixed" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDzF7syaGk2cntRg0VG_xSfDT31h61not7e3oc-RrkLh9QwsdIQKvwC6Ny9pCstVfWJFoMvUy4Em_13U-B6iEfjvoq6mmYCgURHKmvwxUHCWICGF_z-UkX8kee9hvkmX_qQKSHtIpyXYiKQQNyETIVTepCu8zsEgvPdwemV81f4aqv2wjSvvUY6TxTOzLHNFsfoV_OBK0O_tdhNw8BRDAXacl1Cw-nlh9gA1goOnoOsMas5YlBSCO8lfbCqdJqhxHRi-4fc7VK9jCA&quot;); background-size: cover; background-position: center center;"></div>
+<div class="relative z-20 text-center text-white px-gutter">
+<p class="font-display-lg text-headline-md italic">"Comenzamos el viaje más largo de nuestras vidas..."</p>
+</div>
+</section>
+<!-- Event Details Section -->
+<section class="bg-surface py-section-padding overflow-hidden" id="event">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 fade-in">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">La Celebración</span>
+<h2 class="font-display-lg text-headline-md">Detalles del Evento</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Ceremony Card -->
+<div class="border-fine border-outline-variant overflow-hidden bg-surface-container-lowest flex flex-col fade-in shadow-sm visible">
+<img alt="Santuario de Nuestra Señora de la Cabeza" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLh0bWHAH0sMw3ALwoMELWTBBIh3JQlkusPCs6RNNDOQvtAI4laC8finjGfNkX5icllLXhm9agBclxhpVcB0oiX_W1D5Bgx9ZyDbdJ_eqxG4-dh6TuCxc0NwV_Gu2nmhzVhIVYsMOFC_wJjG-ush__znZTiOIn0YyUz7hDjcxurlGOPHk7wKl6467DK05tRyYfd2-4aje2qZO-c0x92qTqGuNuraDJDb-pkysk5EpFVadBOdGg1-XUKm8pVIWiKKBI7nguEpaRjA4">
+<div class="p-10 text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary mb-6 text-[32px]">church</span>
+<h3 class="font-display-lg text-headline-md mb-4">La Ceremonia</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-2">Santuario de Nuestra Señora de la Cabeza</p>
+<p class="font-body-md text-body-md text-outline mb-2">Motril, Granada</p>
+<p class="font-body-lg text-body-lg text-primary mb-6">12:00h</p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary hover:border-primary-container transition-all" href="https://maps.google.com" target="_blank">Ver Ubicación</a>
+</div>
+</div>
+<!-- Reception Card -->
+<div class="border-fine border-outline-variant overflow-hidden bg-surface-container-lowest flex flex-col fade-in shadow-sm visible">
+<img alt="Hotel Impressive Playa Granada" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALYmkGsK3oWmQdz7I9CB15WWy8NeCEHFTMZ02fZj9N7zeZllThCP2M_mVA6FE5qxDVf_E1NC-hpbtYk2BlAwiiVpCp85qA-TtkAR9AOn6kaMh3oDbm5042nqan4wUULLZZgn8KmE6dMoCIfmVPS2zkJXK77xI_tvfk8oqIhJE-oIqzK3TUFozgAol1FIKvYeahpgvbSdFMsZ5SsbmzzBdor9BJLIDtFkQdRCrHUFbjcq5IpTYPNJ3_afKtKXVQwcTi5aUIUymNmo4">
+<div class="p-10 text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary mb-6 text-[32px]">restaurant</span>
+<h3 class="font-display-lg text-headline-md mb-4">La Celebración</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-2">Hotel Impressive Playa Granada Golf</p>
+<p class="font-body-md text-body-md text-outline mb-2">Motril, Granada</p>
+<p class="font-body-lg text-body-lg text-primary mb-6">14:45h</p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary hover:border-primary-container transition-all" href="https://maps.google.com" target="_blank">Ver Ubicación</a>
+</div>
+</div>
+</div>
+<!-- Updated Interactive Blocks -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+<!-- Alojamiento Card -->
+<div class="bg-surface-container-high rounded-xl p-10 flex flex-col items-center text-center shadow-sm border-fine border-outline-variant/30 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] hover-float">
+<h4 class="font-display-lg text-headline-md text-on-surface mb-8">Alojamiento</h4>
+<div class="mb-8 draw-icon">
+<svg class="animate-svg w-16 h-16 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<p class="font-body-md text-on-surface-variant mb-10 flex-grow">Información sobre hoteles cercanos y tarifas especiales para nuestros invitados.</p>
+<button class="w-full py-4 bg-surface-container-lowest rounded-full border border-outline-variant/30 font-label-caps text-label-caps text-on-surface hover:bg-primary hover:text-white transition-all shadow-sm uppercase tracking-widest" onclick="alert('Tarifas especiales disponibles en el hotel Impressive Playa Granada. Menciona el enlace Boda José y Lidia al reservar.')">Ver Más</button>
+</div>
+<!-- Dress Code Card -->
+<div class="bg-surface-container-high rounded-xl p-10 flex flex-col items-center text-center shadow-sm border-fine border-outline-variant/30 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] hover-float">
+<h4 class="font-display-lg text-headline-md text-on-surface mb-8">Dress Code</h4>
+<div class="mb-8 draw-icon">
+<svg class="animate-svg w-16 h-16 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
+</svg>
+</div>
+<p class="font-body-md text-on-surface-variant mb-10 flex-grow">Una orientación para tu vestuario y estilo para disfrutar cómodamente de este gran día.</p>
+<button class="w-full py-4 bg-surface-container-lowest rounded-full border border-outline-variant/30 font-label-caps text-label-caps text-on-surface hover:bg-primary hover:text-white transition-all shadow-sm uppercase tracking-widest" onclick="alert('No hay mejor Dress Code que venir con ganas de celebrar. Elegid un look con el que os sintáis cómodos y podáis disfrutar de cada momento.')">Ver Más</button>
+</div>
+<!-- Tips y Notas Card -->
+<div class="bg-surface-container-high rounded-xl p-10 flex flex-col items-center text-center shadow-sm border-fine border-outline-variant/30 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] hover-float">
+<h4 class="font-display-lg text-headline-md text-on-surface mb-8">Tips y Notas</h4>
+<div class="mb-8 draw-icon">
+<svg class="animate-svg w-16 h-16 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="16" y2="12"></line>
+<line x1="12" x2="12.01" y1="8" y2="8"></line>
+</svg>
+</div>
+<p class="font-body-md text-on-surface-variant mb-10 flex-grow">Detalles adicionales importantes sobre el transporte y otros avisos para los invitados.</p>
+<button class="w-full py-4 bg-surface-container-lowest rounded-full border border-outline-variant/30 font-label-caps text-label-caps text-on-surface hover:bg-primary hover:text-white transition-all shadow-sm uppercase tracking-widest" onclick="alert('Contaremos con servicio de autobús de regreso a las 00:00h y 02:00h. Si tienes alguna intolerancia alimentaria, por favor indícalo en el RSVP.')">+ Info</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Mood Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto overflow-hidden bg-surface">
+<div class="fade-in max-w-[900px] mx-auto visible">
+<div class="relative group overflow-hidden border-fine border-outline-variant p-4 bg-white shadow-xl">
+<img alt="Nos vemos pronto" class="w-full grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPhSZY7yhzkIR5IjDjCFl7N1BFO5-ydjh487Kqdvnx_7QCfAGvzCH-Lt0cn5wM9k1K_iezxmjuCmWcPNSB61asT52iO9FOOBg5RlTOaep9sraSpuwrtnsFXr_DsgMR3eBL7TZ6lyZE4vujxf04Q_dHA2G2JWONeuGiOgfa3zk7DvIb6DMd0w-QmvS-qsH1tmbSqfiEH9nZ3Gtd3IEWlqMW8IpbgBWdFuI9mZpIqt1nt_A0I6c3hj48lUl--L0ajexh8m8CchAM9Vk">
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+<span class="font-display-lg text-white text-display-lg-mobile italic">Contando los días</span>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Section -->
+<section class="py-section-padding px-gutter bg-surface" id="rsvp">
+<div class="max-w-[700px] mx-auto bg-white border-fine border-outline-variant p-12 md:p-20 fade-in text-center shadow-sm visible">
+<div class="mb-12">
+<h2 class="font-display-lg text-headline-md mb-4 text-primary">Confirmar Asistencia</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Sería un honor para nosotros contar con vuestra presencia en este día tan especial.</p>
+<p class="font-body-md text-body-md text-outline mt-2 italic">Por favor, confirmad antes del 1 de Septiembre, 2026</p>
+</div>
+<div class="pt-8">
+<a class="inline-block px-16 py-5 bg-primary text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 shadow-md" href="https://docs.google.com/forms/d/1-OlLdg8nJGyJ0lN6OgLQhVWQ-nOHhAU8IJ0MjkAh6aU/edit" target="_blank">
+                        Rellenar Formulario de Confirmación
+                    </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface border-t-[0.5px] border-outline-variant/30 overflow-hidden">
+<div class="flex flex-col items-center gap-4 pt-section-padding pb-10 px-gutter w-full">
+<div class="w-full max-w-[800px] mb-12 fade-in">
+<img alt="José y Lidia Kiss" class="w-full rounded-sm shadow-lg border-fine border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAenM7siiInBt1MsqCMxgfELOj8M6qlWYLxpguRxNG3n8HsAMVQ6WtDCIJcnakvhJMj7iN-kUQoHsyP9_fHv5kXmiF6LZhNaHzo4xG8w28xdWL5mm79Hs0hP6oJGYvbryduh5SXXIvhcNtibcw8iZhIOk5kI9dXuo15nhIy_n648U4kkp9iI8UoLHgPfUhUeAiQpTn_7-Yqu-Xw5oVhx2ShXbKDBWLNpe8QRsHsoVKuIRd2RowDp8IH1_xxE-euYxaed_tWY61MFek">
+</div>
+<span class="font-display-lg text-headline-md text-primary mb-4">J&amp;L</span>
+<div class="flex gap-8 mb-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#event">Ubicación</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#rsvp">RSVP</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 07-11-2026 José y Lidia. Hecho con amor.</p>
+</div>
+</footer>
+</div>
+<script>
+        function openInvitation() {
+            const envelope = document.getElementById('envelope-overlay');
+            const content = document.getElementById('main-content');
+            const audio = document.getElementById('wedding-music');
+
+            envelope.classList.add('envelope-open');
+            
+            audio.play().catch(e => console.log('Audio autoplay blocked or failed', e));
+
+            setTimeout(() => {
+                envelope.style.opacity = '0';
+                envelope.style.pointerEvents = 'none';
+                content.classList.add('visible');
+                document.body.classList.remove('overflow-hidden');
+                
+                document.querySelectorAll('.fade-in, .reveal-up').forEach(el => observer.observe(el));
+            }, 1500);
+        }
+
+        document.body.classList.add('overflow-hidden');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                nav.classList.remove('-translate-y-full');
+                return;
+            }
+            if (currentScroll > lastScroll && !nav.classList.contains('-translate-y-full')) {
+                nav.classList.add('-translate-y-full');
+            } else if (currentScroll < lastScroll && nav.classList.contains('-translate-y-full')) {
+                nav.classList.remove('-translate-y-full');
+            }
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroBg = document.querySelector('header div:nth-child(2)');
+            if(heroBg) {
+                heroBg.style.transition = 'transform 20s ease-out';
+                setTimeout(() => {
+                    heroBg.style.transform = 'scale(1.15)';
+                }, 100);
+            }
+        });
+    </script>
+
+
+</body></html>
